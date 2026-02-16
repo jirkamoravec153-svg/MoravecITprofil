@@ -8,15 +8,19 @@ fetch('profile.json')
     var nameEl = document.querySelector('#name');
     if (nameEl) nameEl.textContent = data.name || '';
     var skillsEl = document.querySelector('#skills');
-    if (skillsEl && Array.isArray(data.skills)) {
-      data.skills.forEach(function(skill) {
-        var li = document.createElement('li');
-        li.textContent = skill;
-        skillsEl.appendChild(li);
-      });
+    if (skillsEl) {
+      skillsEl.innerHTML = '';
+      if (Array.isArray(data.skills)) {
+        data.skills.forEach(function(skill) {
+          var li = document.createElement('li');
+          li.textContent = skill;
+          skillsEl.appendChild(li);
+        });
+      }
     }
     var interestsEl = document.querySelector('#interests');
     if (interestsEl) {
+      interestsEl.innerHTML = '';
       if (Array.isArray(data.interests) && data.interests.length) {
         var ul = document.createElement('ul');
         data.interests.forEach(function(item) {
