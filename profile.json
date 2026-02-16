@@ -1,0 +1,23 @@
+{
+  "name": "Jiří Moravec",
+  "skills": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Git",
+    "Arduino",
+    "Linux"
+  ],
+  "interests": [
+    "Web development",
+    "Herní grafika",
+    "AI nástroje"
+  ],
+  "projects": [
+    {
+      "title": "Osobní web",
+      "description": "Jednostránkový profil na GitHub Pages",
+      "link": "https://example.com"
+    }
+  ]
+}
