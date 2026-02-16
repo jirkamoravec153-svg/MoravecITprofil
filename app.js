@@ -7,6 +7,14 @@ fetch('profile.json')
   .then(function(data) {
     var nameEl = document.querySelector('#name');
     if (nameEl) nameEl.textContent = data.name || '';
+    var skillsEl = document.querySelector('#skills');
+    if (skillsEl && Array.isArray(data.skills)) {
+      data.skills.forEach(function(skill) {
+        var li = document.createElement('li');
+        li.textContent = skill;
+        skillsEl.appendChild(li);
+      });
+    }
   })
   .catch(function(err) {
     console.error('Chyba při načítání profile.json', err);
